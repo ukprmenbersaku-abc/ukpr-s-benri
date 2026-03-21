@@ -74,7 +74,7 @@ export const NAV_ITEMS = [
   { 
     id: ToolType.SEAT_CHANGE, 
     label: '席替えお助け', 
-    icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 21h20"/><path d="M2 3h20"/><path d="M5 3v18"/><path d="M19 3v18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>,
+    icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 10h18"/><path d="M5 10v11"/><path d="M19 10v11"/><path d="M14 10v11"/><path d="M14 14h5"/></svg>,
     color: 'text-lime-500',
     category: ToolCategory.SCHOOL
   },
@@ -125,6 +125,34 @@ export const NAV_ITEMS = [
     label: 'カラーパレット', 
     icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>,
     color: 'text-purple-500',
+    category: ToolCategory.GENERAL
+  },
+  { 
+    id: ToolType.KANJI_PRACTICE, 
+    label: '漢字練習帳作成', 
+    icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>,
+    color: 'text-red-600',
+    category: ToolCategory.SCHOOL
+  },
+  { 
+    id: ToolType.PDF_EDITOR, 
+    label: 'PDF万能エディター', 
+    icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M5 12h14"/><path d="M5 15h14"/><path d="M5 18h14"/><path d="M9 9h1"/></svg>,
+    color: 'text-red-500',
+    category: ToolCategory.GENERAL
+  },
+  { 
+    id: ToolType.STOP_MOTION, 
+    label: 'こまどりアニメ作成', 
+    icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M17 3v18"/><path d="M3 7h4"/><path d="M3 12h4"/><path d="M3 17h4"/><path d="M17 7h4"/><path d="M17 12h4"/><path d="M17 17h4"/></svg>,
+    color: 'text-rose-500',
+    category: ToolCategory.GENERAL
+  },
+  { 
+    id: ToolType.SEQUENCE_GENERATOR, 
+    label: '連番画像メーカー', 
+    icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H7"/><path d="M12 2v20"/></svg>,
+    color: 'text-indigo-500',
     category: ToolCategory.GENERAL
   }
 ];

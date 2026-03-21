@@ -228,7 +228,7 @@ const SeatChangeHelper: React.FC = () => {
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-slate-800 mb-2 flex items-center justify-center gap-3">
             席替えお助けツール
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-lime-600"><path d="M2 21h20"/><path d="M2 3h20"/><path d="M5 3v18"/><path d="M19 3v18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-lime-600"><path d="M3 10h18"/><path d="M5 10v11"/><path d="M19 10v11"/><path d="M14 10v11"/><path d="M14 14h5"/></svg>
           </h2>
           <p className="text-slate-500 font-kiwi">
             席の固定（ロック）も可能です。準備ができたら「発表モード」へ。<br/>

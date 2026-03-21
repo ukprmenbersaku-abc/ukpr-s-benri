@@ -14,6 +14,10 @@ import PngToIcoConverter from './components/tools/PngToIcoConverter';
 import TimeManager from './components/tools/TimeManager';
 import SimpleCalendar from './components/tools/SimpleCalendar';
 import GithubSyncGenerator from './components/tools/GithubSyncGenerator';
+import KanjiPracticeGenerator from './components/tools/KanjiPracticeGenerator';
+import PdfEditor from './components/tools/PdfEditor';
+import StopMotionCreator from './components/tools/StopMotionCreator';
+import SequenceImageGenerator from './components/tools/SequenceImageGenerator';
 import { ToolType, ToolCategory } from './types';
 
 const App: React.FC = () => {
@@ -99,6 +103,10 @@ const App: React.FC = () => {
                     {tab.tool === ToolType.SVG_TO_PNG && <SvgToPngConverter />}
                     {tab.tool === ToolType.PNG_TO_ICO && <PngToIcoConverter />}
                     {tab.tool === ToolType.GITHUB_SYNC_GENERATOR && <GithubSyncGenerator />}
+                    {tab.tool === ToolType.KANJI_PRACTICE && <KanjiPracticeGenerator />}
+                    {tab.tool === ToolType.PDF_EDITOR && <PdfEditor />}
+                    {tab.tool === ToolType.STOP_MOTION && <StopMotionCreator />}
+                    {tab.tool === ToolType.SEQUENCE_GENERATOR && <SequenceImageGenerator />}
                 </div>
             ))}
         </>
@@ -260,6 +268,10 @@ const NAV_DESCRIPTIONS: Record<string, string> = {
   [ToolType.SVG_TO_PNG]: "SVGを任意の解像度（px/cm）のPNG画像に変換。",
   [ToolType.PNG_TO_ICO]: "PNG画像からfavicon（.ico形式）を作成。マルチサイズ対応。",
   [ToolType.COLOR_PALETTE]: "ランダムまたはロック機能付きで配色を生成。",
+  [ToolType.KANJI_PRACTICE]: "マス目や用紙サイズを自由に指定して、印刷用の漢字練習帳を作成。",
+  [ToolType.PDF_EDITOR]: "PDFの編集、結合、分割、OCR、セキュリティ設定など、あらゆる操作をブラウザ上で完結。",
+  [ToolType.STOP_MOTION]: "複数の写真を繋げて、自分だけのストップモーションアニメーション（動画）を作成。",
+  [ToolType.SEQUENCE_GENERATOR]: "数字や文字の連番画像をまとめて生成。PNG/SVG対応でZIP保存が可能。",
 };
 
 const getBgColorClass = (colorText: string) => {
