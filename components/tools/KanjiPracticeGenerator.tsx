@@ -168,6 +168,33 @@ const KanjiPracticeGenerator: React.FC = () => {
               </div>
 
               <div className="space-y-2">
+                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">おすすめ設定 ({config.paperSize})</label>
+                <div className="flex flex-wrap gap-2">
+                  {config.paperSize === 'A4' && (
+                    <>
+                      <button onClick={() => setConfig({...config, rows: 10, cols: 8})} className="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-red-50 hover:text-red-600 border border-transparent hover:border-red-200 transition-all">10x8 (80マス)</button>
+                      <button onClick={() => setConfig({...config, rows: 12, cols: 10})} className="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-red-50 hover:text-red-600 border border-transparent hover:border-red-200 transition-all">12x10 (120マス)</button>
+                      <button onClick={() => setConfig({...config, rows: 15, cols: 12})} className="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-red-50 hover:text-red-600 border border-transparent hover:border-red-200 transition-all">15x12 (180マス)</button>
+                    </>
+                  )}
+                  {config.paperSize === 'B5' && (
+                    <>
+                      <button onClick={() => setConfig({...config, rows: 10, cols: 7})} className="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-red-50 hover:text-red-600 border border-transparent hover:border-red-200 transition-all">10x7 (70マス)</button>
+                      <button onClick={() => setConfig({...config, rows: 12, cols: 8})} className="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-red-50 hover:text-red-600 border border-transparent hover:border-red-200 transition-all">12x8 (96マス)</button>
+                      <button onClick={() => setConfig({...config, rows: 15, cols: 10})} className="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-red-50 hover:text-red-600 border border-transparent hover:border-red-200 transition-all">15x10 (150マス)</button>
+                    </>
+                  )}
+                  {config.paperSize === 'A5' && (
+                    <>
+                      <button onClick={() => setConfig({...config, rows: 8, cols: 5})} className="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-red-50 hover:text-red-600 border border-transparent hover:border-red-200 transition-all">8x5 (40マス)</button>
+                      <button onClick={() => setConfig({...config, rows: 10, cols: 7})} className="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-red-50 hover:text-red-600 border border-transparent hover:border-red-200 transition-all">10x7 (70マス)</button>
+                      <button onClick={() => setConfig({...config, rows: 12, cols: 8})} className="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-red-50 hover:text-red-600 border border-transparent hover:border-red-200 transition-all">12x8 (96マス)</button>
+                    </>
+                  )}
+                </div>
+              </div>
+
+              <div className="space-y-2">
                 <label className="text-sm font-medium text-slate-600">用紙サイズ</label>
                 <div className="flex gap-2">
                   {(['A4', 'A5', 'B5'] as PaperSize[]).map(size => (
@@ -264,7 +291,10 @@ const KanjiPracticeGenerator: React.FC = () => {
 
           {/* Preview */}
           <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100 flex flex-col items-center justify-center min-h-[400px]">
-            <div className="text-xs text-slate-400 mb-4 font-bold uppercase tracking-widest">プレビュー (イメージ)</div>
+            <div className="text-xs text-red-400 mb-4 font-bold uppercase tracking-widest flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12" y1="16" y2="16"/></svg>
+              プレビュー (※正確ではありません)
+            </div>
             <div 
               className="bg-white shadow-xl border border-slate-200 overflow-hidden relative p-2"
               style={{
@@ -301,8 +331,9 @@ const KanjiPracticeGenerator: React.FC = () => {
                 ))}
               </div>
             </div>
-            <p className="text-xs text-slate-400 mt-6 text-center">
-              ※実際のPDFは設定した用紙サイズに合わせて<br/>正確にレイアウトされます。
+            <p className="text-xs text-red-400 mt-6 text-center font-medium">
+              ※プレビューはあくまでイメージで、正確ではありません。<br/>
+              PDFをダウンロードすると、ミリ単位でめっちゃ正確に作成されます！
             </p>
           </div>
         </div>
@@ -317,7 +348,7 @@ const KanjiPracticeGenerator: React.FC = () => {
           <li>行数と列数を指定して、マスの数を調整します。</li>
           <li>用紙サイズ（A4, A5, B5）を選択します。</li>
           <li>中心線やふりがな枠の有無を切り替えられます。</li>
-          <li>「PDFをダウンロード」ボタンを押すと、印刷用のPDFが生成されます。</li>
+          <li>「PDFをダウンロード」ボタンを押すと、印刷用のPDFがミリ単位でめっちゃ正確に生成されます。</li>
         </ul>
       </div>
     </div>

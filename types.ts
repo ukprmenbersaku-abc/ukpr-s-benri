@@ -20,6 +20,7 @@ export enum ToolType {
   PDF_EDITOR = 'PDF_EDITOR',
   STOP_MOTION = 'STOP_MOTION',
   SEQUENCE_GENERATOR = 'SEQUENCE_GENERATOR',
+  MIDI_TO_TEXT = 'MIDI_TO_TEXT',
 }
 
 export enum ToolCategory {

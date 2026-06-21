@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
+import { PDFDocument, rgb, StandardFonts, degrees } from 'pdf-lib';
 import * as pdfjsLib from 'pdfjs-dist';
 import { createWorker } from 'tesseract.js';
 import { 
@@ -94,7 +94,7 @@ const PdfEditor: React.FC = () => {
         const context = canvas.getContext('2d');
         canvas.height = viewport.height;
         canvas.width = viewport.width;
-        await page.render({ canvasContext: context!, viewport }).promise;
+        await page.render({ canvasContext: context!, viewport } as any).promise;
         pageInfos.push({
           index: i - 1,
           rotation: 0,
@@ -128,7 +128,7 @@ const PdfEditor: React.FC = () => {
       canvasContext: context!,
       viewport: viewport
     };
-    await page.render(renderContext).promise;
+    await page.render(renderContext as any).promise;
   }, [pdfDoc, pages]);
 
   useEffect(() => {
@@ -203,7 +203,7 @@ const PdfEditor: React.FC = () => {
       const newPdfDoc = await PDFDocument.create();
       for (const pageInfo of pages) {
         const [copiedPage] = await newPdfDoc.copyPages(pdfLibDoc, [pageInfo.index]);
-        copiedPage.setRotation({ type: 'degrees', angle: pageInfo.rotation });
+        copiedPage.setRotation(degrees(pageInfo.rotation));
         newPdfDoc.addPage(copiedPage);
       }
 

@@ -18,6 +18,7 @@ import KanjiPracticeGenerator from './components/tools/KanjiPracticeGenerator';
 import PdfEditor from './components/tools/PdfEditor';
 import StopMotionCreator from './components/tools/StopMotionCreator';
 import SequenceImageGenerator from './components/tools/SequenceImageGenerator';
+import MidiToTextConverter from './components/tools/MidiToTextConverter';
 import { ToolType, ToolCategory } from './types';
 
 const App: React.FC = () => {
@@ -107,6 +108,7 @@ const App: React.FC = () => {
                     {tab.tool === ToolType.PDF_EDITOR && <PdfEditor />}
                     {tab.tool === ToolType.STOP_MOTION && <StopMotionCreator />}
                     {tab.tool === ToolType.SEQUENCE_GENERATOR && <SequenceImageGenerator />}
+                    {tab.tool === ToolType.MIDI_TO_TEXT && <MidiToTextConverter />}
                 </div>
             ))}
         </>
@@ -272,6 +274,7 @@ const NAV_DESCRIPTIONS: Record<string, string> = {
   [ToolType.PDF_EDITOR]: "PDFの編集、結合、分割、OCR、セキュリティ設定など、あらゆる操作をブラウザ上で完結。",
   [ToolType.STOP_MOTION]: "複数の写真を繋げて、自分だけのストップモーションアニメーション（動画）を作成。",
   [ToolType.SEQUENCE_GENERATOR]: "数字や文字の連番画像をまとめて生成。PNG/SVG対応でZIP保存が可能。",
+  [ToolType.MIDI_TO_TEXT]: "MIDIファイルを読み込み、高精度なイベント（音高やタイミング）情報を各種テキスト・CSV・JSON・YAML形式で出力・保存できます。",
 };
 
 const getBgColorClass = (colorText: string) => {
