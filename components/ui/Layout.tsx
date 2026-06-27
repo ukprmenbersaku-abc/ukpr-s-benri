@@ -177,6 +177,7 @@ const Layout: React.FC<LayoutProps> = ({
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isLicenseOpen, setIsLicenseOpen] = useState(false);
   
   // DnD States
   const [draggingTabId, setDraggingTabId] = useState<string | null>(null);
@@ -406,8 +407,8 @@ const Layout: React.FC<LayoutProps> = ({
               <div className="flex items-center gap-2 px-2">
                 <BrandIcon size={28} />
                 <div className="flex flex-col justify-center leading-none">
-                  <span className="font-black text-slate-800 text-lg tracking-tight">Benri</span>
-                  <span className="text-[10px] font-bold text-slate-500 tracking-widest uppercase">Tools</span>
+                  <span className="font-black text-slate-800 text-base tracking-tight">UKPR-S</span>
+                  <span className="text-[9px] font-bold text-slate-500 tracking-wider uppercase -mt-0.5">Benri Tools</span>
                 </div>
               </div>
            </div>
@@ -520,8 +521,81 @@ const Layout: React.FC<LayoutProps> = ({
         </main>
         
         <footer className="py-6 bg-slate-50 text-center text-slate-400 text-xs print:hidden font-sans border-t border-slate-200">
-          <p>© 2024 Benri Tools Collection.</p>
+          <p>© 2026 UKPR-S Benri Tools Collection.</p>
+          <div className="mt-1 text-[11px] text-slate-400/80 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
+            <span>Created by UKPR-S & Ys-tecks using Google AI Studio, Cloudflare, and Google Fonts.</span>
+            <span className="hidden sm:inline text-slate-300">|</span>
+            <button 
+              onClick={() => setIsLicenseOpen(true)} 
+              className="text-indigo-500 hover:text-indigo-600 font-semibold cursor-pointer underline hover:no-underline transition-all"
+            >
+              ライセンスはこちら
+            </button>
+          </div>
         </footer>
+
+        {isLicenseOpen && (
+          <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-fade-in">
+            <div className="bg-white rounded-3xl shadow-2xl border border-slate-100 max-w-lg w-full overflow-hidden animate-scale-up">
+              <div className="px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
+                <h3 className="font-extrabold text-slate-800 text-base flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-indigo-600"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                  利用規約・ライセンス
+                </h3>
+                <button 
+                  onClick={() => setIsLicenseOpen(false)}
+                  className="p-1.5 rounded-xl hover:bg-slate-200/80 text-slate-400 hover:text-slate-600 transition-colors cursor-pointer"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+              </div>
+              <div className="p-6 overflow-y-auto max-h-[70vh] text-slate-600 text-left text-sm leading-relaxed space-y-5 font-sans">
+                <div>
+                  <h4 className="font-extrabold text-slate-800 text-sm mb-1.5 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+                    1. 利用許諾
+                  </h4>
+                  <p className="pl-3 text-slate-500">
+                    本ツールは、個人利用・商用利用を問わず、どなたでも無料で自由にご利用いただけます。
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 className="font-extrabold text-slate-800 text-sm mb-1.5 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+                    2. 生成物の扱い
+                  </h4>
+                  <p className="pl-3 text-slate-500">
+                    本ツールを使用して生成された成果物の権利は利用者に帰属します。成果物にクレジットやライセンス表記を記載するかどうかは任意（自由）です。
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-extrabold text-slate-800 text-sm mb-1.5 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+                    3. 再配布の制限
+                  </h4>
+                  <ul className="pl-3 space-y-1 list-disc list-inside text-slate-500">
+                    <li>本ツール自体（改変されたものを含む）を再配布する場合は、事前に開発者（UKPR-S & Ys-tecks）の許可が必要です。</li>
+                    <li>本ツール自体の商用目的での再配布は、いかなる場合も禁止します。</li>
+                  </ul>
+                </div>
+
+                <div className="pt-4 border-t border-slate-100 flex justify-between items-center text-xs font-mono font-bold text-slate-400">
+                  <span>著作権表示：© 2026 UKPR-S & Ys-tecks</span>
+                </div>
+              </div>
+              <div className="px-6 py-4 border-t border-slate-50 bg-slate-50/50 flex justify-end">
+                <button 
+                  onClick={() => setIsLicenseOpen(false)}
+                  className="px-4 py-2 text-xs font-extrabold text-white bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 rounded-xl transition-all shadow-md shadow-indigo-600/10 cursor-pointer"
+                >
+                  閉じる
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

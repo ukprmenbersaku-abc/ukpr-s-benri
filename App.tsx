@@ -168,7 +168,7 @@ const Home: React.FC<{ onSelectTool: (tool: ToolType) => void }> = ({ onSelectTo
     <div className="animate-fade-in">
       <div className="py-8 md:py-12 mb-4">
         <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 inline-block mb-4">
-          便利ツール集
+          UKPR-S便利ツール
         </h1>
         <p className="text-lg text-slate-600">
           日々の「ちょっと面倒」を解決する、シンプルで美しいツールたち。
