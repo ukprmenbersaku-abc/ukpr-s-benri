@@ -521,9 +521,9 @@ const Layout: React.FC<LayoutProps> = ({
         </main>
         
         <footer className="py-6 bg-slate-50 text-center text-slate-400 text-xs print:hidden font-sans border-t border-slate-200">
-          <p>© 2026 UKPR-S Benri Tools Collection.</p>
+          <p>© 2026 <a href="https://ukpr-s.pages.dev" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-indigo-600 font-semibold underline decoration-slate-300 hover:decoration-indigo-500 transition-all">UKPR-S</a> Benri Tools Collection.</p>
           <div className="mt-1 text-[11px] text-slate-400/80 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
-            <span>Created by UKPR-S & Ys-tecks using Google AI Studio, Cloudflare, and Google Fonts.</span>
+            <span>Created by <a href="https://ukpr-s.pages.dev" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-indigo-600 font-semibold underline decoration-slate-300 hover:decoration-indigo-500 transition-all">UKPR-S</a> & Ys-tecks using Google AI Studio, Cloudflare, and Google Fonts.</span>
             <span className="hidden sm:inline text-slate-300">|</span>
             <button 
               onClick={() => setIsLicenseOpen(true)} 
@@ -576,13 +576,13 @@ const Layout: React.FC<LayoutProps> = ({
                     3. 再配布の制限
                   </h4>
                   <ul className="pl-3 space-y-1 list-disc list-inside text-slate-500">
-                    <li>本ツール自体（改変されたものを含む）を再配布する場合は、事前に開発者（UKPR-S & Ys-tecks）の許可が必要です。</li>
+                    <li>本ツール自体（改変されたものを含む）を再配布する場合は、事前に開発者（<a href="https://ukpr-s.pages.dev" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-indigo-600 font-semibold underline decoration-slate-300 hover:decoration-indigo-500 transition-all">UKPR-S</a> & Ys-tecks）の許可が必要です。</li>
                     <li>本ツール自体の商用目的での再配布は、いかなる場合も禁止します。</li>
                   </ul>
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 flex justify-between items-center text-xs font-mono font-bold text-slate-400">
-                  <span>著作権表示：© 2026 UKPR-S & Ys-tecks</span>
+                  <span>著作権表示：© 2026 <a href="https://ukpr-s.pages.dev" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-indigo-600 underline transition-all">UKPR-S</a> & Ys-tecks</span>
                 </div>
               </div>
               <div className="px-6 py-4 border-t border-slate-50 bg-slate-50/50 flex justify-end">
